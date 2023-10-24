@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
+from colorama import Fore, Style
+
+
 def init_board():
     board = []
     for i in range(10):
@@ -17,7 +20,12 @@ def print_board(board):
     for i in range(10):
         print(chr(65 + i), end=" ")
         for j in range(10):
-            print(board[i][j], end=" ")
+            if board[i][j] == 'X':
+                print(Fore.RED + board[i][j] + Style.RESET_ALL, end=" ")
+            elif board[i][j] == 'O':
+                print(Fore.BLUE + board[i][j] + Style.RESET_ALL, end=" ")
+            else:
+                print(board[i][j], end=" ")
         print()
 
 
