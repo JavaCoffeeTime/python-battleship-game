@@ -45,14 +45,13 @@ def main():
         print_board(board)
         print("Enter your shot position:")
         shot = input().upper()
-        col = ord(shot[0]) - 65
-        row = int(shot[1:]) - 1
-        if board[col][row] != ' ':
+        user_input = {'col': ord(shot[0]) - 65, 'row': int(shot[1:]) - 1}
+        if board[user_input['col']][user_input['row']] != ' ':
             print("You've touched the ship!")
-            board[col][row] = 'X'
+            board[user_input['col']][user_input['row']] = 'X'
         else:
             print("You've missed the ship!")
-            board[col][row] = 'O'
+            board[user_input['col']][user_input['row']] = 'O'
 
 
 if __name__ == "__main__":
