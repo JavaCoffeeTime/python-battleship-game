@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 from colorama import Fore, Style
 
 
@@ -16,7 +15,7 @@ def init_board():
 
 
 def print_board(board):
-    print("  1 2 3 4 5 6 7 8 9 10")
+    print("\n\n  1 2 3 4 5 6 7 8 9 10")  # Added two newlines before the board
     for i in range(10):
         print(chr(65 + i), end=" ")
         for j in range(10):
