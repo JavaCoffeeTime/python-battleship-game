@@ -14,17 +14,18 @@ def init_board():
 
 
 def print_board(board):
-    print("\n\n  A B C D E F G H I J")
+    print("\n\n   A   B   C   D   E   F   G   H   I   J")
+    print("  -----------------------------------------")
     for i in range(10):
-        print(i+1, end=" ")
+        print(str(i+1).ljust(2), end="| ")
         for j in range(10):
             if board[j][i] == 'X':
-                print(Fore.RED + board[j][i] + Style.RESET_ALL, end=" ")
+                print(Fore.RED + board[j][i] + Style.RESET_ALL, end=" | ")
             elif board[j][i] == 'O':
-                print(Fore.BLUE + board[j][i] + Style.RESET_ALL, end=" ")
+                print(Fore.BLUE + board[j][i] + Style.RESET_ALL, end=" | ")
             else:
-                print(board[j][i], end=" ")
-        print()
+                print(board[j][i], end=" | ")
+        print("\n  -----------------------------------------")
 
 
 def place_ship(board, start_row, start_col, end_row, end_col, ship):
